@@ -2,6 +2,14 @@
 
 # Websocket: Changelog
 
+## `v2.3`
+
+ > PHP version `^8.1`
+
+### `2.3.0`
+
+ * Removed PHP `8.0` support (@sirn-se)
+
 ## `v2.2`
 
  > PHP version `^8.0`

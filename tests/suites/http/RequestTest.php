@@ -225,9 +225,6 @@ class RequestTest extends TestCase
         $request->withHeader('.', 'invaid name');
     }
 
-    /**
-     * @dataProvider provideInvalidHeaderValues
-     */
     #[DataProvider('provideInvalidHeaderValues')]
     public function testHeaderValueInvalidVariants(mixed $value): void
     {
@@ -244,9 +241,6 @@ class RequestTest extends TestCase
         yield [[[0]]];
     }
 
-    /**
-     * @dataProvider provideValidHeaderValues
-     */
     #[DataProvider('provideValidHeaderValues')]
     public function testHeaderValueValidVariants(mixed $value, array $expected): void
     {
