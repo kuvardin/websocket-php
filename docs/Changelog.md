@@ -6,6 +6,10 @@
 
  > PHP version `^8.0`
 
+### `2.2.1`
+
+ * Minor fixes on  `FollowRedirect` middleware (@sirn-se)
+
 ### `2.2.0`
 
  * Optional `FollowRedirect` middleware (Client only) (@sirn-se)
