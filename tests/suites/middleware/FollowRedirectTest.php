@@ -102,7 +102,7 @@ class FollowRedirectTest extends TestCase
         $this->expectSocketStreamIsConnected();
         $this->expectSocketStreamClose();
         $this->expectException(HandshakeException::class);
-        $this->expectExceptionMessage('0 of 0 redirect attempts, giving up');
+        $this->expectExceptionMessage('Too many redirect attempts, giving up');
         $connection->pullHttp();
     }
 

@@ -9,9 +9,8 @@ During handshake, it reacts to `3xx` HTTP status and reconnect the Client to pro
 
 ## Client
 
-Will follow redirect by setting new URI and reconnection the Client.
-
-* Server response during handshake have a `3xx` status
+Will follow redirect by setting new URI and reconnecy the Client if;
+* Server response during handshake has a `3xx` status
 * Server response also includes a `Location` header
 * Maximum number of redirects has not been exceeded
 
@@ -23,7 +22,7 @@ $client->connect();
 ## Maximum number of redirects
 
 By default, maximum number of redirects in `10`.
-If middleware receive additional redirect instructions after that, it will throw a HandshakeException.
+If middleware receive additional redirect instructions after that, it will throw a `HandshakeException`.
 
 It is also possible to specify maximum number of redirects as parameter.
 
