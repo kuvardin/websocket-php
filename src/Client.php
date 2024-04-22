@@ -375,7 +375,11 @@ class Client implements LoggerAwareInterface, Stringable
         $this->streams = $this->streamFactory->createStreamCollection();
 
         $host_uri = (new Uri())
-            ->withScheme($this->socketUri->getScheme() == 'wss' ? 'ssl' : 'tcp')
+            ->withScheme(match ($this->socketUri->getScheme()) {
+                'ws', 'http' => 'tcp',
+                'wss', 'https' => 'ssl',
+                default => throw new ClientException("Invalid socket scheme: {$this->socketUri->getScheme()}")
+            })
             ->withHost($this->socketUri->getHost(Uri::IDN_ENCODE))
             ->withPort($this->socketUri->getPort(Uri::REQUIRE_PORT));
 
