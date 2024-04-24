@@ -6,6 +6,10 @@
 
  > PHP version `^8.0`
 
+### `2.2.2`
+
+ * Fix so redirect to `https` uses `ssl` (ended up with `tcp` before) (@sirn-se)
+
 ### `2.2.1`
 
  * Minor fixes on  `FollowRedirect` middleware (@sirn-se)
