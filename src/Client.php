@@ -106,15 +106,13 @@ class Client implements LoggerAwareInterface, Stringable
     /**
      * Set logger.
      * @param Psr\Log\LoggerInterface $logger Logger implementation
-     * @return self.
      */
-    public function setLogger(LoggerInterface $logger): self
+    public function setLogger(LoggerInterface $logger): void
     {
         $this->logger = $logger;
         if ($this->connection) {
             $this->connection->setLogger($this->logger);
         }
-        return $this;
     }
 
     /**
