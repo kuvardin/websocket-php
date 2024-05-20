@@ -60,9 +60,8 @@ class MiddlewareHandler implements LoggerAwareInterface, Stringable
     /**
      * Set logger on MiddlewareHandler and all LoggerAware middlewares.
      * @param LoggerInterface $logger
-     * @return $this
      */
-    public function setLogger(LoggerInterface $logger): self
+    public function setLogger(LoggerInterface $logger): void
     {
         $this->logger = $logger;
         foreach ($this->incoming as $middleware) {
@@ -75,7 +74,6 @@ class MiddlewareHandler implements LoggerAwareInterface, Stringable
                 $middleware->setLogger($this->logger);
             }
         }
-        return $this;
     }
 
     /**
